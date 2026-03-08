@@ -22,7 +22,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
           >
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-blue-700 bg-blue-50 border border-blue-100 mb-6">
-              IT Solution Provider Group
+              IT Solution Provider Group1
             </span>
           </motion.div>
 
