@@ -36,6 +36,7 @@
 - Project
 - Product
 - Contact Us
+- SEbitAI (외부 새창 링크 — URL 미정)
 
 ---
 
@@ -57,9 +58,9 @@
 - Contact 배너
 
 ### /product ✅ 완료
-- 페이지 헤더 — 파란 그라디언트 배경
+- 페이지 헤더 — 파란 그라디언트 배경 (SmartGeoKit ServiceLine)
 - 제품/솔루션 목록 카드 그리드 (`src/data/products.json` 연동)
-- 제품 소개서 PDF 다운로드 버튼
+- 제품 소개서 통합 PDF 다운로드 버튼 (섹션 헤더 우측)
 - Contact 배너
 
 ### /project (미구현)
