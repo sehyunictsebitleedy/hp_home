@@ -11,16 +11,16 @@ const placeholderProducts: Omit<Product, "_id" | "image">[] = [
     name: "SmartGeoKit RMCP(Risk Monitoring Control Platform) Ver.1.0",
     slug: { current: "smart-factory-control" },
     description:
-      "재해 복합 모니터링 지원 플랫폼<br />다양한 운영체제와 시스템 환경을 하나로 연계하여, 안정적인 실시간 모니터링과 유연한 맞춤형 커스터마이징을 제공하는 통합 운영 플랫폼입니다.",
-    pdfFile: { asset: { url: "#" } },
+      "재해 복합 모니터링 지원 플랫폼. 다양한 운영체제와 시스템 환경을 하나로 연계하여, 안정적인 실시간 모니터링과 유연한 맞춤형 커스터마이징을 제공하는 통합 운영 플랫폼입니다.",
+    pdfFile: { asset: { url: "https://sehyunict.com/download/sehyun_brochure.pdf" } },
     featured: true,
   },
   {
-    name: "IoT 설비 모니터링 시스템",
+    name: "SmartGeoKit AR Ver.1.0",
     slug: { current: "iot-monitoring-system" },
     description:
-      "산업용 IoT 센서와 엣지 컴퓨팅을 활용한 설비 상태 실시간 모니터링 및 예지보전 솔루션입니다. 이상 징후 조기 감지로 비계획적 설비 다운타임을 최소화합니다.",
-    pdfFile: { asset: { url: "#" } },
+      "현장정보와 Digital 정보의 복합/ 중첩 구현 솔루션. 다양한 측위 기술(GPS, QR 등)을 활용해 현장 정보와 영상을 실시간 연계하며, 강력한 보안 체계 위에서 안드로이드와 iOS 모두에 최적화된 맞춤형 모바일 운영 환경을 제공합니다.",
+    pdfFile: { asset: { url: "https://sehyunict.com/download/sehyun_brochure.pdf" } },
     featured: true,
   },
   {
