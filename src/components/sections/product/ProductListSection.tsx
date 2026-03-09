@@ -8,10 +8,10 @@ import { urlFor } from "@/lib/sanity";
 // Sanity 연결 전 임시 데이터
 const placeholderProducts: Omit<Product, "_id" | "image">[] = [
   {
-    name: "스마트팩토리 통합관제 솔루션",
+    name: "SmartGeoKit RMCP(Risk Monitoring Control Platform) Ver.1.0",
     slug: { current: "smart-factory-control" },
     description:
-      "생산 현장의 모든 데이터를 실시간으로 수집·분석하여 최적의 생산 환경을 구현하는 통합 플랫폼입니다. 설비 가동률 향상과 불량률 감소를 통한 생산성 극대화를 지원합니다.",
+      "재해 복합 모니터링 지원 플랫폼<br />다양한 운영체제와 시스템 환경을 하나로 연계하여, 안정적인 실시간 모니터링과 유연한 맞춤형 커스터마이징을 제공하는 통합 운영 플랫폼입니다.",
     pdfFile: { asset: { url: "#" } },
     featured: true,
   },
@@ -89,7 +89,7 @@ export default function ProductListSection({ products }: Props) {
             제품 · 솔루션
           </h2>
           <p className="mt-4 text-gray-500 text-base max-w-2xl">
-            SmartGeoKit Series 제품들은 최신의 기술들을 사용하여 최적화 개발되었으며 2D GIS, 3D GIS, CAD COmpare등 도면, 위치기반 업무의 표준화, 혁신을 선도합니다.<br />최신의 제품들과 업무 전문성으로 고객에게 다가가겠습니다.
+            SmartGeoKit Series 제품들은 최신의 기술들을 사용하여 최적화 개발되었으며 2D GIS, 3D GIS, CAD Compare등 도면, 위치기반 업무의 표준화, 혁신을 선도합니다.<br />최신의 제품들과 업무 전문성으로 고객에게 다가가겠습니다.
           </p>
         </motion.div>
 
