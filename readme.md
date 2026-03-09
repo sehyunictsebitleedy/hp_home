@@ -63,10 +63,12 @@
 - 제품 소개서 통합 PDF 다운로드 버튼 (섹션 헤더 우측)
 - Contact 배너
 
-### /project (미구현)
-- 페이지 헤더
-- 프로젝트 목록 (카드 그리드)
-- 분야별 필터
+### /project ✅ 완료
+- 페이지 헤더 — 파란 그라디언트 배경
+- 연도별 탭 (전체 / 2024 / 2023 / ... 자동 생성) + 건수 표시
+- 프로젝트 카드 그리드 — 분야 뱃지, 고객사, 연도 배지
+- 데이터: `src/data/projects.json`
+- Contact 배너
 
 ### /contact (미구현)
 - 페이지 헤더
@@ -82,16 +84,19 @@ src/
 ├── app/
 │   ├── about/page.tsx
 │   ├── product/page.tsx
-│   ├── project/              (미구현)
+│   ├── project/page.tsx
 │   ├── contact/              (미구현)
 │   ├── admin/
 │   │   ├── page.tsx          ← 관리자 로그인
-│   │   └── dashboard/page.tsx ← 제품 관리 대시보드
+│   │   └── dashboard/page.tsx ← 프로젝트/제품 관리 대시보드 (탭)
 │   ├── api/
 │   │   ├── admin/
 │   │   │   ├── login/route.ts
 │   │   │   ├── logout/route.ts
-│   │   │   └── products/
+│   │   │   ├── products/
+│   │   │   │   ├── route.ts      ← GET / POST
+│   │   │   │   └── [id]/route.ts ← PUT / DELETE
+│   │   │   └── projects/
 │   │   │       ├── route.ts      ← GET / POST
 │   │   │       └── [id]/route.ts ← PUT / DELETE
 │   │   └── contact/          (미구현 - Resend 이메일 API)
@@ -108,6 +113,8 @@ src/
 │   │   ├── ProjectPreviewSection.tsx
 │   │   ├── ProductPreviewSection.tsx
 │   │   ├── ContactBanner.tsx
+│   │   ├── project/
+│   │   │   └── ProjectListSection.tsx  ← 연도별 탭 + 카드 그리드
 │   │   ├── product/
 │   │   │   └── ProductListSection.tsx
 │   │   └── about/
@@ -118,10 +125,11 @@ src/
 │   └── ui/
 │       └── CountUp.tsx
 ├── data/
-│   └── products.json         ← 제품 데이터 (관리자 페이지에서 수정)
+│   ├── products.json         ← 제품 데이터 (관리자 페이지에서 수정)
+│   └── projects.json         ← 프로젝트 데이터 (관리자 페이지에서 수정)
 ├── middleware.ts              ← /admin/dashboard 접근 보호
 └── types/
-    └── index.ts
+    └── index.ts              ← LocalProject, LocalProduct 등
 ```
 
 ---
@@ -140,7 +148,23 @@ http://localhost:3000/admin
 
 `.env.local`의 `ADMIN_PASSWORD` 값 사용 (기본값: `sehyun1234`)
 
-### 기능
+### 탭 구성
+
+- **프로젝트 관리** (기본 탭)
+- **제품 관리**
+
+### 프로젝트 관리 필드
+
+| 필드 | 설명 |
+|------|------|
+| 프로젝트명 | 필수 |
+| 연도 | 필수, 기본값: 현재연도 |
+| 분야 | 드롭다운 선택 (스마트팩토리/GIS/SI/방재·재난 등) |
+| 고객사 | 고객사명 |
+| 설명 | 카드에 표시되는 설명 |
+| 이미지 URL | 없으면 연도 텍스트 표시 |
+
+### 제품 관리 필드
 
 | 필드 | 설명 |
 |------|------|
@@ -150,15 +174,11 @@ http://localhost:3000/admin
 | PDF URL | 제품별 개별 PDF 링크 (선택) |
 | 홈 화면 노출 | 체크 시 홈 ProductPreview 섹션에 노출 |
 
-- 추가 / 수정 / 삭제
-- 변경 내용은 `src/data/products.json`에 즉시 저장
-- PDF URL 등록 시 목록에 `PDF` 뱃지 표시
-
 ### 운영 방식 (로컬 → 배포)
 
 1. 로컬에서 `npm run dev` 실행
-2. `http://localhost:3000/admin` 에서 제품 추가/수정
-3. `git add src/data/products.json && git commit && git push`
+2. `http://localhost:3000/admin` 에서 데이터 추가/수정
+3. `git add src/data/ && git commit && git push`
 4. Vercel 자동 배포 → 프로덕션 반영
 
 > ⚠️ Vercel 배포 환경에서는 파일 시스템 쓰기가 불가능합니다.
@@ -179,6 +199,5 @@ ADMIN_SESSION_TOKEN=     ← 세션 토큰 (임의 문자열)
 
 ## 남은 작업
 
-- [ ] /project 페이지 구현
 - [ ] /contact 페이지 + 문의 폼 (Resend 연동)
 - [ ] Vercel 배포
