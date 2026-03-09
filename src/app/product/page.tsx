@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
 import ProductListSection from "@/components/sections/product/ProductListSection";
 import ContactBanner from "@/components/sections/ContactBanner";
+import { client } from "@/lib/sanity";
+import { Product } from "@/types";
 
 export const metadata: Metadata = {
   title: "Product | 세현아이씨티",
   description: "세현아이씨티의 스마트팩토리, IoT, MES 등 제품 및 솔루션 목록",
 };
 
-export default function ProductPage() {
+async function getProducts(): Promise<Product[]> {
+  return client.fetch(`*[_type == "product"] | order(_createdAt asc) {
+    _id, name, slug, description, image, pdfFile, featured
+  }`);
+}
+
+export default async function ProductPage() {
+  const products = await getProducts();
+
   return (
     <>
       {/* 페이지 헤더 */}
@@ -25,7 +35,7 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <ProductListSection />
+      <ProductListSection products={products} />
       <ContactBanner />
     </>
   );
