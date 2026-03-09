@@ -76,21 +76,34 @@ export default function ProductListSection({ products }: Props) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 섹션 헤더 */}
         <motion.div
-          className="mb-14"
+          className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-sm font-semibold text-blue-600 uppercase tracking-widest">
-            Solutions &amp; Products
-          </span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-gray-900">
-            제품 · 솔루션
-          </h2>
-          <p className="mt-4 text-gray-500 text-base max-w-2xl">
-            SmartGeoKit Series 제품들은 최신의 기술들을 사용하여 최적화 개발되었으며 2D GIS, 3D GIS, CAD Compare등 도면, 위치기반 업무의 표준화, 혁신을 선도합니다.<br />최신의 제품들과 업무 전문성으로 고객에게 다가가겠습니다.
-          </p>
+          <div>
+            <span className="text-sm font-semibold text-blue-600 uppercase tracking-widest">
+              Solutions &amp; Products
+            </span>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-gray-900">
+              제품 · 솔루션
+            </h2>
+            <p className="mt-4 text-gray-500 text-base max-w-2xl">
+              SmartGeoKit Series 제품들은 최신의 기술들을 사용하여 최적화 개발되었으며 2D GIS, 3D GIS, CAD Compare등 도면, 위치기반 업무의 표준화, 혁신을 선도합니다.<br />최신의 제품들과 업무 전문성으로 고객에게 다가가겠습니다.
+            </p>
+          </div>
+          <a
+            href="https://sehyunict.com/download/sehyun_brochure.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-700 text-white text-sm font-semibold hover:bg-blue-800 transition-colors shrink-0"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            제품 소개서 다운로드 (PDF)
+          </a>
         </motion.div>
 
         {/* 제품 카드 그리드 */}
@@ -133,39 +146,14 @@ export default function ProductListSection({ products }: Props) {
                 )}
               </div>
 
-              {/* 텍스트 + 버튼 */}
+              {/* 텍스트 */}
               <div className="flex flex-col flex-1 p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-2 leading-snug">
                   {product.name}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed flex-1">
+                <p className="text-sm text-gray-500 leading-relaxed">
                   {product.description}
                 </p>
-
-                {/* PDF 다운로드 버튼 */}
-                {product.pdfFile?.asset?.url && (
-                  <a
-                    href={product.pdfFile.asset.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900 transition-colors"
-                  >
-                    <svg
-                      className="w-4 h-4 shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      />
-                    </svg>
-                    제품 소개서 다운로드 (PDF)
-                  </a>
-                )}
               </div>
             </motion.div>
           ))}
