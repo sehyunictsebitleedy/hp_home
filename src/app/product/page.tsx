@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 
 async function getProducts(): Promise<Product[]> {
   return client.fetch(`*[_type == "product"] | order(_createdAt asc) {
-    _id, name, slug, description, image, pdfFile, featured
+    _id, name, slug, description, image,
+    "pdfFile": pdfFile { "asset": { "url": asset->url } },
+    featured
   }`);
 }
 
