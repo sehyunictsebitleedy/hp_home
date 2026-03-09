@@ -50,6 +50,14 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold px-3 py-1.5 rounded-lg bg-blue-700 text-white hover:bg-blue-800 transition-colors"
+            >
+              SEbitAI
+            </a>
           </nav>
 
           {/* 모바일 햄버거 */}
@@ -80,6 +88,15 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            className="block py-3 text-sm font-semibold text-blue-700 hover:text-blue-800 transition-colors"
+          >
+            SEbitAI ↗
+          </a>
         </div>
       )}
     </header>

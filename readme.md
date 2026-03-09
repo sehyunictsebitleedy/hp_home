@@ -11,9 +11,8 @@
 | 프레임워크 | Next.js 16 (App Router) |
 | 스타일 | Tailwind CSS v4 |
 | 애니메이션 | Framer Motion |
-| CMS | Sanity (next-sanity) |
+| 데이터 | JSON 파일 (`src/data/`) + 자체 관리자 페이지 |
 | 이메일 전송 | Resend (Next.js API Route 연동) |
-| 폼 | React Hook Form |
 | 배포 | Vercel (예정) |
 
 ---
@@ -37,6 +36,7 @@
 - Project
 - Product
 - Contact Us
+- SEbitAI (외부 새창 링크 — URL 미정)
 
 ---
 
@@ -52,20 +52,21 @@
 ### /about ✅ 완료
 - 페이지 헤더 — 파란 그라디언트 배경
 - 회사소개 — 소개 텍스트 + 수치 카운터 (설립연도 / 프로젝트 수 / 고객사 / 협력사)
-- 사업영역 — 6대 분야 카드 그리드 (기존 business 페이지 내용)
+- 사업영역 — 6대 분야 카드 그리드
 - 고객사/협력사 — 태그 형태 (고객사 13개, 협력사 9개)
-- 연혁 — 좌우 교차 타임라인 (2010~2024, 임시데이터 → Sanity 연결 후 교체 예정)
+- 연혁 — 좌우 교차 타임라인 (2010~2024)
+- Contact 배너
+
+### /product ✅ 완료
+- 페이지 헤더 — 파란 그라디언트 배경 (SmartGeoKit ServiceLine)
+- 제품/솔루션 목록 카드 그리드 (`src/data/products.json` 연동)
+- 제품 소개서 통합 PDF 다운로드 버튼 (섹션 헤더 우측)
 - Contact 배너
 
 ### /project (미구현)
 - 페이지 헤더
 - 프로젝트 목록 (카드 그리드)
 - 분야별 필터
-
-### /product (미구현)
-- 페이지 헤더
-- 제품/솔루션 목록
-- PDF 다운로드
 
 ### /contact (미구현)
 - 페이지 헤더
@@ -80,10 +81,20 @@
 src/
 ├── app/
 │   ├── about/page.tsx
-│   ├── project/          (미구현)
-│   ├── product/          (미구현)
-│   ├── contact/          (미구현)
-│   ├── api/contact/      (미구현 - Resend 이메일 API)
+│   ├── product/page.tsx
+│   ├── project/              (미구현)
+│   ├── contact/              (미구현)
+│   ├── admin/
+│   │   ├── page.tsx          ← 관리자 로그인
+│   │   └── dashboard/page.tsx ← 제품 관리 대시보드
+│   ├── api/
+│   │   ├── admin/
+│   │   │   ├── login/route.ts
+│   │   │   ├── logout/route.ts
+│   │   │   └── products/
+│   │   │       ├── route.ts      ← GET / POST
+│   │   │       └── [id]/route.ts ← PUT / DELETE
+│   │   └── contact/          (미구현 - Resend 이메일 API)
 │   ├── layout.tsx
 │   ├── page.tsx
 │   └── globals.css
@@ -97,6 +108,8 @@ src/
 │   │   ├── ProjectPreviewSection.tsx
 │   │   ├── ProductPreviewSection.tsx
 │   │   ├── ContactBanner.tsx
+│   │   ├── product/
+│   │   │   └── ProductListSection.tsx
 │   │   └── about/
 │   │       ├── CompanyIntroSection.tsx
 │   │       ├── BusinessSection.tsx
@@ -104,36 +117,62 @@ src/
 │   │       └── HistorySection.tsx
 │   └── ui/
 │       └── CountUp.tsx
-├── lib/
-│   └── sanity.ts
-├── sanity/
-│   └── schemas/
-│       ├── project.ts
-│       ├── product.ts
-│       └── company.ts
+├── data/
+│   └── products.json         ← 제품 데이터 (관리자 페이지에서 수정)
+├── middleware.ts              ← /admin/dashboard 접근 보호
 └── types/
     └── index.ts
 ```
 
 ---
 
-## Sanity CMS 스키마
+## 관리자 페이지
 
-| 스키마 | 필드 |
-|--------|------|
-| 프로젝트 | 제목, 분야, 설명, 이미지, 날짜, 홈노출 여부 |
-| 제품 | 이름, 설명, 이미지, PDF 파일, 홈노출 여부 |
-| 회사정보 | 비전, 미션, 소개, 수치 데이터, 연혁 |
+### 접속 방법
+
+개발 서버 실행 후 브라우저에서 접속:
+
+```
+http://localhost:3000/admin
+```
+
+### 비밀번호
+
+`.env.local`의 `ADMIN_PASSWORD` 값 사용 (기본값: `sehyun1234`)
+
+### 기능
+
+| 필드 | 설명 |
+|------|------|
+| 제품명 | 필수 |
+| 설명 | 카드에 표시되는 제품 설명 |
+| 이미지 URL | 외부 이미지 URL (없으면 기본 아이콘 표시) |
+| PDF URL | 제품별 개별 PDF 링크 (선택) |
+| 홈 화면 노출 | 체크 시 홈 ProductPreview 섹션에 노출 |
+
+- 추가 / 수정 / 삭제
+- 변경 내용은 `src/data/products.json`에 즉시 저장
+- PDF URL 등록 시 목록에 `PDF` 뱃지 표시
+
+### 운영 방식 (로컬 → 배포)
+
+1. 로컬에서 `npm run dev` 실행
+2. `http://localhost:3000/admin` 에서 제품 추가/수정
+3. `git add src/data/products.json && git commit && git push`
+4. Vercel 자동 배포 → 프로덕션 반영
+
+> ⚠️ Vercel 배포 환경에서는 파일 시스템 쓰기가 불가능합니다.
+> 제품 데이터 수정은 **로컬에서 작업 후 커밋**하는 방식으로 운영합니다.
 
 ---
 
 ## 환경변수 (.env.local)
 
 ```
-NEXT_PUBLIC_SANITY_PROJECT_ID=   ← sanity.io에서 프로젝트 생성 후 입력
-NEXT_PUBLIC_SANITY_DATASET=production
-RESEND_API_KEY=                  ← resend.com에서 발급
-CONTACT_EMAIL=asset.manager@sehyunict.com
+RESEND_API_KEY=          ← resend.com에서 발급
+CONTACT_EMAIL=leedy@sehyunict.com
+ADMIN_PASSWORD=          ← 관리자 페이지 비밀번호
+ADMIN_SESSION_TOKEN=     ← 세션 토큰 (임의 문자열)
 ```
 
 ---
@@ -141,9 +180,5 @@ CONTACT_EMAIL=asset.manager@sehyunict.com
 ## 남은 작업
 
 - [ ] /project 페이지 구현
-- [ ] /product 페이지 구현
 - [ ] /contact 페이지 + 문의 폼 (Resend 연동)
-- [ ] Sanity 프로젝트 생성 및 Project ID 입력
-- [ ] Sanity Studio 설정 (/studio 라우트)
-- [ ] 임시 데이터 → Sanity 연동으로 교체
 - [ ] Vercel 배포
