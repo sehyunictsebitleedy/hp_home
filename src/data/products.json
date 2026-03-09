@@ -14,5 +14,37 @@
     "description": "현장정보와 Digital 정보의 복합/중첩 구현 솔루션. 다양한 측위 기술(GPS, QR 등)을 활용해 현장 정보와 영상을 실시간 연계하며, 강력한 보안 체계 위에서 안드로이드와 iOS 모두에 최적화된 맞춤형 모바일 운영 환경을 제공합니다.",
     "image": "",
     "featured": true
+  },
+  {
+    "id": "1773044120774",
+    "name": "SmartGeoKit Xler Ver.1.0",
+    "slug": "smartgeokit-xler-ver10",
+    "description": "실시간 설비, 감지기, 시스템 연계 및 위치 판독 솔루션. RabbitMQ 기반의 고성능 실시간 연계 제어 솔루션으로, 다양한 운영체제와 기기 간 신호 통합은 물론 복합 실내 측위 기술을 지원하며 고객 환경에 최적화된 맞춤형 환경을 제공합니다.",
+    "image": "",
+    "featured": true
+  },
+  {
+    "id": "1773044178060",
+    "name": "SmartGeoKit Layout Manager Ver.2.3",
+    "slug": "smartgeokit-layout-manager-ver23",
+    "description": "CAD/ Image 기반 레이아웃 배치/ 정보연계 솔루션. WebGL 및 SVG 기술을 활용해 액티브X 없이 모든 브라우저와 기기에서 설비 배치를 자유롭게 시뮬레이션하고 실시간으로 공유할 수 있는 웹 기반 시각화 플랫폼입니다.",
+    "image": "",
+    "featured": true
+  },
+  {
+    "id": "1773044234916",
+    "name": "SmartGeoKit CAD Compare Ver.1.1",
+    "slug": "smartgeokit-cad-compare-ver11",
+    "description": "2개 버전의 CAD 파일 간 변경사항 자동 추적 Tool. GS인증 1등급을 획득한 고성능 엔진을 통해 CAD 도면 간의 공간 인덱싱과 엔티티 속성까지 정밀 분석하여 변경 사항을 자동으로 추적·관리하는 전문 비교 솔루션입니다.",
+    "image": "",
+    "featured": true
+  },
+  {
+    "id": "1773044322890",
+    "name": "SmartGeoKit CAD View Ver.3.0",
+    "slug": "smartgeokit-cad-view-ver30",
+    "description": "Canvas, Tile Map, SVG, Html5 기술 기반의 CAD Viewer. GS 인증 1등급 기반의 보안성과 호환성을 갖추고, WebGL 등 최적화 기술로 대용량 CAD 도면과 폰트를 브라우저 제약 없이 빠르고 정확하게 구현하는 전문 뷰어 솔루션입니다.",
+    "image": "",
+    "featured": true
   }
 ]

@@ -27,7 +27,7 @@ export default function ProductPage() {
             Product
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-white">
-            제품 · 솔루션
+            SmartGeoKit ServiceLine
           </h1>
           <p className="mt-4 text-blue-100 text-lg max-w-xl mx-auto">
             SmartGeoKit Series 제품들은 최신의 기술들을 사용하여 최적화 개발되었으며 2D GIS, 3D GIS, CAD Compare등 도면, 위치기반 업무의 표준화, 혁신을 선도합니다.<br />최신의 제품들과 업무 전문성으로 고객에게 다가가겠습니다.
