@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "name": "SmartGeoKit RMCP(Risk Monitoring Control Platform) Ver.1.0",
+    "slug": "smartgeokit-rmcp",
+    "description": "재해 복합 모니터링 지원 플랫폼. 다양한 운영체제와 시스템 환경을 하나로 연계하여, 안정적인 실시간 모니터링과 유연한 맞춤형 커스터마이징을 제공하는 통합 운영 플랫폼입니다.",
+    "image": "",
+    "featured": true
+  },
+  {
+    "id": "2",
+    "name": "SmartGeoKit AR Ver.1.0",
+    "slug": "smartgeokit-ar",
+    "description": "현장정보와 Digital 정보의 복합/중첩 구현 솔루션. 다양한 측위 기술(GPS, QR 등)을 활용해 현장 정보와 영상을 실시간 연계하며, 강력한 보안 체계 위에서 안드로이드와 iOS 모두에 최적화된 맞춤형 모바일 운영 환경을 제공합니다.",
+    "image": "",
+    "featured": true
+  }
+]

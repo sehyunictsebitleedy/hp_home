@@ -3,34 +3,41 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { Project } from "@/types";
-import { urlFor } from "@/lib/sanity";
 
-// Sanity 연결 전 임시 데이터
-const placeholderProjects: Omit<Project, "_id" | "image">[] = [
+interface LocalProject {
+  id: string;
+  title: string;
+  slug: string;
+  category: string;
+  description: string;
+  image?: string;
+  date: string;
+}
+
+const placeholderProjects: LocalProject[] = [
   {
+    id: "1",
     title: "스마트팩토리 MES 구축",
-    slug: { current: "smart-factory-mes" },
+    slug: "smart-factory-mes",
     category: "smart-factory",
     description: "제조 실행 시스템(MES) 구축을 통한 생산 공정 디지털화 및 실시간 모니터링 구현",
     date: "2024-06",
-    featured: true,
   },
   {
+    id: "2",
     title: "IoT 설비 원격 모니터링",
-    slug: { current: "iot-monitoring" },
+    slug: "iot-monitoring",
     category: "iot",
     description: "공장 내 주요 설비에 IoT 센서를 설치하여 원격 모니터링 및 예지보전 시스템 구축",
     date: "2024-03",
-    featured: true,
   },
   {
+    id: "3",
     title: "ERP 시스템 통합 SI",
-    slug: { current: "erp-si" },
+    slug: "erp-si",
     category: "si",
     description: "기존 레거시 ERP 시스템을 최신 클라우드 기반으로 전환 및 타 시스템과의 통합 구축",
     date: "2023-11",
-    featured: true,
   },
 ];
 
@@ -52,11 +59,11 @@ const itemVariants = {
 };
 
 interface Props {
-  projects?: Project[];
+  projects?: LocalProject[];
 }
 
 export default function ProjectPreviewSection({ projects }: Props) {
-  const items = projects ?? (placeholderProjects as unknown as Project[]);
+  const items = projects ?? placeholderProjects;
 
   return (
     <section className="py-24 bg-white">
@@ -93,16 +100,16 @@ export default function ProjectPreviewSection({ projects }: Props) {
           viewport={{ once: true, margin: "-50px" }}
         >
           {items.map((project) => (
-            <motion.div key={project.slug.current} variants={itemVariants}>
+            <motion.div key={project.id} variants={itemVariants}>
               <Link
-                href={`/project/${project.slug.current}`}
+                href={`/project`}
                 className="group block rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300"
               >
                 {/* 이미지 영역 */}
                 <div className="relative h-48 bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden">
                   {project.image ? (
                     <Image
-                      src={urlFor(project.image).width(600).height(400).url()}
+                      src={project.image}
                       alt={project.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"

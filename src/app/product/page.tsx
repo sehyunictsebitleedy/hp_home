@@ -1,24 +1,22 @@
 import type { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 import ProductListSection from "@/components/sections/product/ProductListSection";
 import ContactBanner from "@/components/sections/ContactBanner";
-import { client } from "@/lib/sanity";
-import { Product } from "@/types";
+import { LocalProduct } from "@/types";
 
 export const metadata: Metadata = {
   title: "Product | 세현아이씨티",
-  description: "세현아이씨티의 스마트팩토리, IoT, MES 등 제품 및 솔루션 목록",
+  description: "세현아이씨티의 SmartGeoKit 제품 및 솔루션 목록",
 };
 
-async function getProducts(): Promise<Product[]> {
-  return client.fetch(`*[_type == "product"] | order(_createdAt asc) {
-    _id, name, slug, description, image,
-    "pdfFile": pdfFile { "asset": { "url": asset->url } },
-    featured
-  }`);
+function getProducts(): LocalProduct[] {
+  const filePath = path.join(process.cwd(), "src/data/products.json");
+  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
 }
 
-export default async function ProductPage() {
-  const products = await getProducts();
+export default function ProductPage() {
+  const products = getProducts();
 
   return (
     <>

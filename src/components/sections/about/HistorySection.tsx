@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 
-// 실제 연혁 데이터는 Sanity에서 관리 — 아래는 초기 임시 데이터
 const historyData = [
   {
     year: "2024",

@@ -2,57 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Product } from "@/types";
-import { urlFor } from "@/lib/sanity";
-
-// Sanity 연결 전 임시 데이터
-const placeholderProducts: Omit<Product, "_id" | "image">[] = [
-  {
-    name: "SmartGeoKit RMCP(Risk Monitoring Control Platform) Ver.1.0",
-    slug: { current: "smart-factory-control" },
-    description:
-      "재해 복합 모니터링 지원 플랫폼. 다양한 운영체제와 시스템 환경을 하나로 연계하여, 안정적인 실시간 모니터링과 유연한 맞춤형 커스터마이징을 제공하는 통합 운영 플랫폼입니다.",
-    pdfFile: { asset: { url: "https://sehyunict.com/download/sehyun_brochure.pdf" } },
-    featured: true,
-  },
-  {
-    name: "SmartGeoKit AR Ver.1.0",
-    slug: { current: "iot-monitoring-system" },
-    description:
-      "현장정보와 Digital 정보의 복합/ 중첩 구현 솔루션. 다양한 측위 기술(GPS, QR 등)을 활용해 현장 정보와 영상을 실시간 연계하며, 강력한 보안 체계 위에서 안드로이드와 iOS 모두에 최적화된 맞춤형 모바일 운영 환경을 제공합니다.",
-    pdfFile: { asset: { url: "https://sehyunict.com/download/sehyun_brochure.pdf" } },
-    featured: true,
-  },
-  {
-    name: "에너지 관리 시스템 (EMS)",
-    slug: { current: "energy-management-system" },
-    description:
-      "공장·건물의 전력·가스·용수 사용량을 통합 계측하고 분석하여 에너지 비용을 절감하는 시스템입니다. 정부 에너지 진단 기준에 맞는 보고서를 자동 생성합니다.",
-    featured: false,
-  },
-  {
-    name: "생산실적 관리 시스템 (MES)",
-    slug: { current: "mes-production-management" },
-    description:
-      "작업지시부터 완제품 출하까지 전 공정의 생산 실적을 실시간으로 집계·관리하는 MES 솔루션입니다. ERP 연동을 통해 생산·재고 정보를 일원화합니다.",
-    pdfFile: { asset: { url: "#" } },
-    featured: false,
-  },
-  {
-    name: "품질검사 자동화 솔루션",
-    slug: { current: "quality-inspection-automation" },
-    description:
-      "머신비전과 AI 딥러닝 기술을 결합한 외관 검사 자동화 솔루션입니다. 고속 라인에서도 미세 결함을 99% 이상의 정확도로 검출합니다.",
-    featured: false,
-  },
-  {
-    name: "스마트 물류 통합관리 플랫폼",
-    slug: { current: "smart-logistics-platform" },
-    description:
-      "입·출고, 재고, 운송 전 과정을 하나의 플랫폼에서 관리하는 WMS/TMS 통합 솔루션입니다. 바코드·RFID·모바일 기기를 연동하여 물류 정확도와 효율을 높입니다.",
-    featured: false,
-  },
-];
+import { LocalProduct } from "@/types";
 
 const containerVariants = {
   hidden: {},
@@ -65,12 +15,10 @@ const itemVariants = {
 };
 
 interface Props {
-  products?: Product[];
+  products: LocalProduct[];
 }
 
 export default function ProductListSection({ products }: Props) {
-  const items = products ?? (placeholderProducts as unknown as Product[]);
-
   return (
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,9 +62,9 @@ export default function ProductListSection({ products }: Props) {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {items.map((product) => (
+          {products.map((product) => (
             <motion.div
-              key={product.slug.current}
+              key={product.id}
               variants={itemVariants}
               className="flex flex-col rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
             >
@@ -124,7 +72,7 @@ export default function ProductListSection({ products }: Props) {
               <div className="relative h-48 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
                 {product.image ? (
                   <Image
-                    src={urlFor(product.image).width(600).height(400).url()}
+                    src={product.image}
                     alt={product.name}
                     fill
                     className="object-cover"
