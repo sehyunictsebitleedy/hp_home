@@ -4,6 +4,7 @@ export interface LocalProduct {
   slug: string;
   description: string;
   image?: string;
+  pdfUrl?: string;
   featured: boolean;
 }
 

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LocalProduct } from "@/types";
 
-const emptyForm = { name: "", description: "", image: "", featured: false };
+const emptyForm = { name: "", description: "", image: "", pdfUrl: "", featured: false };
 
 export default function AdminDashboard() {
   const router = useRouter();
@@ -41,6 +41,7 @@ export default function AdminDashboard() {
       name: product.name,
       description: product.description,
       image: product.image || "",
+      pdfUrl: product.pdfUrl || "",
       featured: product.featured,
     });
     setEditingId(product.id);
@@ -156,6 +157,16 @@ export default function AdminDashboard() {
                   placeholder="https://..."
                 />
               </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">PDF URL</label>
+                <input
+                  type="url"
+                  value={form.pdfUrl}
+                  onChange={(e) => setForm({ ...form, pdfUrl: e.target.value })}
+                  className="w-full px-3 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="https://... (PDF 파일 링크)"
+                />
+              </div>
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
@@ -219,6 +230,9 @@ export default function AdminDashboard() {
                     <h3 className="font-semibold text-gray-900 text-sm truncate">{product.name}</h3>
                     {product.featured && (
                       <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">홈 노출</span>
+                    )}
+                    {product.pdfUrl && (
+                      <span className="text-xs bg-red-50 text-red-500 px-2 py-0.5 rounded-full">PDF</span>
                     )}
                   </div>
                   <p className="text-xs text-gray-400 mt-1 line-clamp-2">{product.description}</p>
