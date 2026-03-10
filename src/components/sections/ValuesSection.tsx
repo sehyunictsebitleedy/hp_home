@@ -24,7 +24,15 @@ const values = [
   {
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21a48.25 48.25 0 01-8.135-.687c-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.599 6.5a3 3 0 0 0 .399-1.375" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.477 10.896a4 4 0 0 1 .585-.396" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.938 10.5a4 4 0 0 1 .585.396" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18a4 4 0 0 1-1.967-.516" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.967 17.484A4 4 0 0 1 18 18" />
       </svg>
     ),
     title: "SEbit AI",

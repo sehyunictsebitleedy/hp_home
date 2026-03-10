@@ -17,6 +17,7 @@ const categoryColors: Record<string, string> = {
   "솔루션": "bg-green-50 text-green-700",
   "모니터링": "bg-orange-50 text-orange-700",
   "모바일": "bg-cyan-50 text-cyan-700",
+  "디지털트윈": "bg-violet-50 text-violet-700",
 };
 
 const containerVariants = {
