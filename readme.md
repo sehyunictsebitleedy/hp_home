@@ -59,6 +59,7 @@
 - 프로젝트 카드 그리드 — 분야 뱃지, 고객사, 연도 배지
 - 데이터: `src/data/projects.json`
 
+
 ### /product
 - 제품/솔루션 카드 그리드 — `src/data/products.json` 연동
 - 제품 소개서 통합 PDF 다운로드 버튼
@@ -119,7 +120,7 @@ src/
 │   │   │   ├── ClientsSection.tsx
 │   │   │   └── HistorySection.tsx
 │   │   ├── project/
-│   │   │   └── ProjectListSection.tsx      ← 연도 탭 + 카드 그리드
+
 │   │   ├── product/
 │   │   │   └── ProductListSection.tsx
 │   │   └── contact/
@@ -134,7 +135,7 @@ src/
 │   └── contact.json                        ← 위치·연락처 (관리자 탭4)
 ├── middleware.ts                           ← /admin/dashboard 세션 보호
 └── types/
-    └── index.ts                            ← LocalProduct, LocalProject, HistoryItem, ContactInfo
+
 ```
 
 ---
@@ -187,18 +188,12 @@ src/
 
 | 필드 | 필수 | 설명 |
 |------|------|------|
-| 장소명 | ✅ | 지도 카드에 표시 |
-| 표시 주소 | ✅ | 연락처 카드 주소 |
-| 위도 | ✅ | Google Maps embed 좌표 |
-| 경도 | ✅ | Google Maps embed 좌표 |
-| 전화번호 | | 전화 카드 |
-| 팩스 | | 없으면 숨김 |
-| 이메일 | | `mailto:` 링크 |
-| 업무시간 | | 시계 아이콘 카드 |
+
 
 > 위도/경도: [maps.google.com](https://maps.google.com) → 위치 우클릭 → "이 위치" 클릭 → 숫자 복사
 
 ---
+
 
 ### 운영 방식 (로컬 → 배포)
 
@@ -224,6 +219,7 @@ ADMIN_SESSION_TOKEN=     ← 세션 토큰 (임의 문자열)
 ---
 
 ## 남은 작업
+
 
 - [ ] Vercel 배포
 - [ ] SEbitAI 외부 링크 URL 확정
