@@ -72,7 +72,6 @@
 - 연도별 탭 (전체 / 2024 / 2023 / ... 자동 생성) + 건수 표시
 - 프로젝트 카드 그리드 — 분야 뱃지, 고객사, 연도 배지
 - 데이터: `src/data/projects.json`
->>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 - Contact 배너
 
 ### /contact ✅ 완료
@@ -145,7 +144,6 @@ src/
 │   ├── layout.tsx
 │   ├── page.tsx
 │   └── globals.css
->>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 ├── components/
 │   ├── layout/
 │   │   ├── Header.tsx                      ← Sticky 헤더, 모바일 메뉴
@@ -170,7 +168,6 @@ src/
 │   │   ├── ContactBanner.tsx
 │   │   ├── project/
 │   │   │   └── ProjectListSection.tsx  ← 연도별 탭 + 카드 그리드
->>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 │   │   ├── product/
 │   │   │   └── ProductListSection.tsx      ← 제품 카드 그리드 (products.json)
 │   │   ├── project/
@@ -196,7 +193,6 @@ src/
 ├── middleware.ts              ← /admin/dashboard 접근 보호
 └── types/
     └── index.ts              ← LocalProject, LocalProduct 등
->>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 ```
 
 ---
@@ -298,7 +294,6 @@ Contact 페이지의 지도 위치와 연락처 정보를 관리합니다.
 | 이미지 URL | 없으면 연도 텍스트 표시 |
 
 ### 제품 관리 필드
->>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 
 | 필드 | 설명 |
 |------|------|
@@ -313,7 +308,6 @@ Contact 페이지의 지도 위치와 연락처 정보를 관리합니다.
 ---
 
 =======
->>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 ### 운영 방식 (로컬 → 배포)
 
 1. 로컬에서 `npm run dev` 실행
@@ -342,7 +336,6 @@ ADMIN_SESSION_TOKEN=     ← 세션 토큰 (임의 문자열)
 <<<<<<< HEAD
 =======
 - [ ] /contact 페이지 + 문의 폼 (Resend 연동)
->>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 - [ ] Vercel 배포
 - [ ] SEbitAI 외부 링크 URL 확정
 - [ ] RESEND_API_KEY 발급 및 이메일 발신 도메인 설정
