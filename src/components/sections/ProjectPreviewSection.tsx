@@ -21,26 +21,31 @@ interface Props {
 
 export default function ProjectPreviewSection({ projects = [] }: Props) {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-32 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* 섹션 헤더 */}
         <motion.div
-          className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14"
+          className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
           <div>
-            <span className="text-sm font-semibold text-blue-600 uppercase tracking-widest">Our Work</span>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-gray-900">주요 프로젝트</h2>
+            <span className="block text-xs font-bold text-blue-600 uppercase tracking-[0.2em] mb-3">
+              Our Work
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-950 leading-tight tracking-tight">
+              주요 프로젝트
+            </h2>
           </div>
           <Link
             href="/project"
-            className="text-sm font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition-colors shrink-0"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-blue-700 transition-colors shrink-0 pb-1"
           >
             전체 보기
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
