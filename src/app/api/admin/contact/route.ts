@@ -14,8 +14,8 @@ function writeContact(data: ContactInfo) {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
 }
 
-function isAuthorized(): boolean {
-  const cookieStore = cookies();
+async function isAuthorized(): Promise<boolean> {
+  const cookieStore = await cookies();
   const session = cookieStore.get("admin_session");
   return session?.value === (process.env.ADMIN_SESSION_TOKEN || "sehyunict_admin");
 }
@@ -25,7 +25,7 @@ export async function GET() {
 }
 
 export async function PUT(request: Request) {
-  if (!isAuthorized()) {
+  if (!(await isAuthorized())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "year": "2024",
+    "title": "스마트팩토리 MES 구축",
+    "category": "스마트팩토리",
+    "client": "A제조",
+    "description": "제조 실행 시스템(MES) 구축을 통한 생산 공정 디지털화 및 실시간 모니터링 구현",
+    "image": "",
+    "featured": true
+  },
+  {
+    "id": "2",
+    "year": "2024",
+    "title": "IoT 설비 원격 모니터링",
+    "category": "IoT",
+    "client": "B공장",
+    "description": "공장 내 주요 설비에 IoT 센서를 설치하여 원격 모니터링 및 예지보전 시스템 구축",
+    "image": "",
+    "featured": true
+  },
+  {
+    "id": "3",
+    "year": "2023",
+    "title": "ERP 시스템 통합 SI",
+    "category": "SI",
+    "client": "C그룹",
+    "description": "기존 레거시 ERP 시스템을 최신 클라우드 기반으로 전환 및 타 시스템과의 통합 구축",
+    "image": "",
+    "featured": true
+  }
+]
