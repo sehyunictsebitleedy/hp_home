@@ -16,12 +16,6 @@ const values = [
       "단순 납품을 넘어 고객의 비즈니스 목표를 함께 달성하는 장기 파트너로 동행합니다.",
   },
   {
-<<<<<<< HEAD
-    number: "03",
-    title: "신뢰와 전문성",
-    description:
-      "15년 이상의 현장 경험과 전문 기술력으로 안정적이고 지속 가능한 시스템을 제공합니다.",
-=======
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
@@ -37,7 +31,6 @@ const values = [
     ),
     title: "SEbit AI",
     description: "세현의 AI 브랜드 SEbit AI 서비스를 제공합니다.",
->>>>>>> origin/now_work
   },
 ];
 
@@ -68,7 +61,7 @@ export default function ValuesSection() {
           <div className="lg:col-span-8 flex flex-col divide-y divide-gray-100">
             {values.map((value, i) => (
               <motion.div
-                key={value.number}
+                key={value.title}
                 className="group flex gap-8 py-10 first:pt-0 last:pb-0"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +69,7 @@ export default function ValuesSection() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <span className="text-sm font-bold text-gray-300 shrink-0 w-8 pt-1 group-hover:text-blue-400 transition-colors duration-300">
-                  {value.number}
+                  {value.number ?? `0${i + 1}`}
                 </span>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">

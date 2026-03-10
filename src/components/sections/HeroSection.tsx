@@ -14,9 +14,6 @@ const clients = ["삼성전자", "삼성디스플레이", "삼성SDS", "한국�
 
 export default function HeroSection() {
   return (
-<<<<<<< HEAD
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
-=======
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white">
       {/* 움직이는 동그라미 배경 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -45,24 +42,8 @@ export default function HeroSection() {
           />
         ))}
       </div>
->>>>>>> origin/now_work
 
-      {/* 배경 그리드 패턴 */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)",
-          maskImage:
-            "radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)",
-          opacity: 0.4,
-        }}
-      />
-
-      {/* 우측 블루 글로우 */}
+{/* 우측 블루 글로우 */}
       <div
         className="absolute top-0 right-0 w-[640px] h-[640px] pointer-events-none"
         style={{
@@ -199,27 +180,6 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
         </div>
-<<<<<<< HEAD
-=======
-
-        {/* 하단 스크롤 힌트 — 마우스 아이콘 */}
-        <motion.div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          {/* 마우스 외곽 */}
-          <div className="relative w-6 h-10 rounded-full border-2 border-gray-400 flex justify-center pt-1.5">
-            {/* 스크롤 휠 */}
-            <motion.div
-              className="w-1 h-2 rounded-full bg-gray-400"
-              animate={{ y: [0, 10, 0], opacity: [1, 0, 1] }}
-              transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-            />
-          </div>
-        </motion.div>
->>>>>>> origin/now_work
       </div>
 
       {/* 스크롤 인디케이터 */}
