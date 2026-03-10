@@ -16,10 +16,28 @@ const values = [
       "단순 납품을 넘어 고객의 비즈니스 목표를 함께 달성하는 장기 파트너로 동행합니다.",
   },
   {
+<<<<<<< HEAD
     number: "03",
     title: "신뢰와 전문성",
     description:
       "15년 이상의 현장 경험과 전문 기술력으로 안정적이고 지속 가능한 시스템을 제공합니다.",
+=======
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.599 6.5a3 3 0 0 0 .399-1.375" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.477 10.896a4 4 0 0 1 .585-.396" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.938 10.5a4 4 0 0 1 .585.396" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18a4 4 0 0 1-1.967-.516" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.967 17.484A4 4 0 0 1 18 18" />
+      </svg>
+    ),
+    title: "SEbit AI",
+    description: "세현의 AI 브랜드 SEbit AI 서비스를 제공합니다.",
+>>>>>>> origin/now_work
   },
 ];
 

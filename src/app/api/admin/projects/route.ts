@@ -29,6 +29,7 @@ export async function POST(request: Request) {
     client: body.client || "",
     description: body.description || "",
     image: body.image || "",
+    featured: body.featured ?? false,
   };
 
   projects.push(newProject);
