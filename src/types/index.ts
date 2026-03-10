@@ -1,3 +1,13 @@
+export interface LocalProject {
+  id: string;
+  year: string;
+  title: string;
+  category: string;
+  client: string;
+  description: string;
+  image: string;
+}
+
 export interface LocalProduct {
   id: string;
   name: string;

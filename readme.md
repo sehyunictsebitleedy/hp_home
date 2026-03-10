@@ -65,8 +65,14 @@
 
 ### /project ✅ 완료
 - 페이지 헤더 — 파란 그라디언트 배경
+<<<<<<< HEAD
 - 연도 탭 — 연도별 프로젝트 필터 (동적 생성, `projects.json` 연동)
 - 프로젝트 카드 그리드 — 제목 / 분야 / 고객사 / 설명
+=======
+- 연도별 탭 (전체 / 2024 / 2023 / ... 자동 생성) + 건수 표시
+- 프로젝트 카드 그리드 — 분야 뱃지, 고객사, 연도 배지
+- 데이터: `src/data/projects.json`
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 - Contact 배너
 
 ### /contact ✅ 완료
@@ -83,6 +89,7 @@
 ```
 src/
 ├── app/
+<<<<<<< HEAD
 │   ├── about/
 │   │   └── page.tsx                        ← About 페이지
 │   ├── product/
@@ -116,11 +123,35 @@ src/
 │   ├── page.tsx                            ← 홈 페이지
 │   ├── globals.css
 │   └── favicon.ico
+=======
+│   ├── about/page.tsx
+│   ├── product/page.tsx
+│   ├── project/page.tsx
+│   ├── contact/              (미구현)
+│   ├── admin/
+│   │   ├── page.tsx          ← 관리자 로그인
+│   │   └── dashboard/page.tsx ← 프로젝트/제품 관리 대시보드 (탭)
+│   ├── api/
+│   │   ├── admin/
+│   │   │   ├── login/route.ts
+│   │   │   ├── logout/route.ts
+│   │   │   ├── products/
+│   │   │   │   ├── route.ts      ← GET / POST
+│   │   │   │   └── [id]/route.ts ← PUT / DELETE
+│   │   │   └── projects/
+│   │   │       ├── route.ts      ← GET / POST
+│   │   │       └── [id]/route.ts ← PUT / DELETE
+│   │   └── contact/          (미구현 - Resend 이메일 API)
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 ├── components/
 │   ├── layout/
 │   │   ├── Header.tsx                      ← Sticky 헤더, 모바일 메뉴
 │   │   └── Footer.tsx
 │   ├── sections/
+<<<<<<< HEAD
 │   │   ├── HeroSection.tsx                 ← 홈 히어로
 │   │   ├── ValuesSection.tsx               ← 홈 핵심가치
 │   │   ├── ProjectPreviewSection.tsx       ← 홈 프로젝트 미리보기
@@ -131,6 +162,15 @@ src/
 │   │   │   ├── BusinessSection.tsx         ← 사업영역 6대 분야
 │   │   │   ├── ClientsSection.tsx          ← 고객사·협력사 태그
 │   │   │   └── HistorySection.tsx          ← 연혁 타임라인 (history.json)
+=======
+│   │   ├── HeroSection.tsx
+│   │   ├── ValuesSection.tsx
+│   │   ├── ProjectPreviewSection.tsx
+│   │   ├── ProductPreviewSection.tsx
+│   │   ├── ContactBanner.tsx
+│   │   ├── project/
+│   │   │   └── ProjectListSection.tsx  ← 연도별 탭 + 카드 그리드
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 │   │   ├── product/
 │   │   │   └── ProductListSection.tsx      ← 제품 카드 그리드 (products.json)
 │   │   ├── project/
@@ -141,6 +181,7 @@ src/
 │   └── ui/
 │       └── CountUp.tsx                     ← 숫자 카운트업 애니메이션
 ├── data/
+<<<<<<< HEAD
 │   ├── products.json                       ← 제품 데이터 (관리자 탭1)
 │   ├── projects.json                       ← 프로젝트 데이터 (관리자 탭2)
 │   ├── history.json                        ← 연혁 데이터 2013~2025 (관리자 탭3)
@@ -149,6 +190,13 @@ src/
 └── types/
     └── index.ts                            ← LocalProduct, LocalProject,
                                                HistoryItem, ContactInfo 타입 정의
+=======
+│   ├── products.json         ← 제품 데이터 (관리자 페이지에서 수정)
+│   └── projects.json         ← 프로젝트 데이터 (관리자 페이지에서 수정)
+├── middleware.ts              ← /admin/dashboard 접근 보호
+└── types/
+    └── index.ts              ← LocalProject, LocalProduct 등
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 ```
 
 ---
@@ -168,6 +216,7 @@ src/
 
 ---
 
+<<<<<<< HEAD
 ### 탭 1 — 제품 관리 (`products.json`)
 
 제품 목록을 관리합니다. `/product` 페이지와 홈 제품 미리보기 섹션에 반영됩니다.
@@ -231,6 +280,25 @@ Contact 페이지의 지도 위치와 연락처 정보를 관리합니다.
 > 위도/경도 찾는 법: [maps.google.com](https://maps.google.com) → 위치 우클릭 → "이 위치" 클릭 → 숫자 복사
 
 **연락처 정보**
+=======
+### 탭 구성
+
+- **프로젝트 관리** (기본 탭)
+- **제품 관리**
+
+### 프로젝트 관리 필드
+
+| 필드 | 설명 |
+|------|------|
+| 프로젝트명 | 필수 |
+| 연도 | 필수, 기본값: 현재연도 |
+| 분야 | 드롭다운 선택 (스마트팩토리/GIS/SI/방재·재난 등) |
+| 고객사 | 고객사명 |
+| 설명 | 카드에 표시되는 설명 |
+| 이미지 URL | 없으면 연도 텍스트 표시 |
+
+### 제품 관리 필드
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 
 | 필드 | 설명 |
 |------|------|
@@ -239,10 +307,13 @@ Contact 페이지의 지도 위치와 연락처 정보를 관리합니다.
 | 이메일 | 이메일 카드, `mailto:` 링크 |
 | 업무시간 | 시계 아이콘 카드 |
 
+<<<<<<< HEAD
 **동작**: 저장 → `src/data/contact.json` 즉시 저장, Contact 페이지 즉시 반영
 
 ---
 
+=======
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 ### 운영 방식 (로컬 → 배포)
 
 1. 로컬에서 `npm run dev` 실행
@@ -268,6 +339,10 @@ ADMIN_SESSION_TOKEN=     ← 세션 토큰 (임의 문자열)
 
 ## 남은 작업
 
+<<<<<<< HEAD
+=======
+- [ ] /contact 페이지 + 문의 폼 (Resend 연동)
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
 - [ ] Vercel 배포
 - [ ] SEbitAI 외부 링크 URL 확정
 - [ ] RESEND_API_KEY 발급 및 이메일 발신 도메인 설정
