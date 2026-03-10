@@ -24,11 +24,19 @@ const values = [
   {
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.599 6.5a3 3 0 0 0 .399-1.375" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.477 10.896a4 4 0 0 1 .585-.396" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.938 10.5a4 4 0 0 1 .585.396" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18a4 4 0 0 1-1.967-.516" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.967 17.484A4 4 0 0 1 18 18" />
       </svg>
     ),
-    title: "신뢰와 전문성",
-    description: "풍부한 현장 경험과 전문 기술력으로 안정적이고 신뢰할 수 있는 서비스를 제공합니다.",
+    title: "SEbit AI",
+    description: "세현의 AI 브랜드 SEbit AI 서비스를 제공합니다.",
   },
 ];
 
