@@ -6,7 +6,12 @@
     "category": "스마트팩토리",
     "client": "삼성전자",
     "description": "공장 내 주요 설비에 IoT 센서를 설치하여 실시간 모니터링 및 예지보전 기능을 고도화한 프로젝트",
+<<<<<<< HEAD
+    "image": "",
+    "featured": true
+=======
     "image": ""
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
   },
   {
     "id": "2",
@@ -15,7 +20,12 @@
     "category": "GIS",
     "client": "삼성디스플레이",
     "description": "베트남 법인 내 GIS 기반 설비 위치 관제 및 실내 LBS 서비스 구축",
+<<<<<<< HEAD
+    "image": "",
+    "featured": true
+=======
     "image": ""
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
   },
   {
     "id": "3",
@@ -24,7 +34,12 @@
     "category": "SI",
     "client": "아이마켓코리아",
     "description": "레거시 ERP 시스템을 클라우드 기반으로 전환하고 타 시스템과 통합 연동",
+<<<<<<< HEAD
+    "image": "",
+    "featured": true
+=======
     "image": ""
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
   },
   {
     "id": "4",
@@ -33,7 +48,12 @@
     "category": "방재/재난",
     "client": "에버원",
     "description": "GIS 기반 Enterprise 방재시스템 고도화 및 재해 시뮬레이션 모듈 추가 개발",
+<<<<<<< HEAD
+    "image": "",
+    "featured": false
+=======
     "image": ""
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
   },
   {
     "id": "5",
@@ -42,7 +62,12 @@
     "category": "GIS",
     "client": "삼성전자 서안",
     "description": "중국 서안법인 공장 내 GIS 기반 설비 관제 및 작업자 위치 추적 시스템 구축",
+<<<<<<< HEAD
+    "image": "",
+    "featured": false
+=======
     "image": ""
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
   },
   {
     "id": "6",
@@ -51,7 +76,12 @@
     "category": "솔루션",
     "client": "자체",
     "description": "자체 개발 SmartGeoKit 솔루션의 기능 확장 및 UI/UX 개선",
+<<<<<<< HEAD
+    "image": "",
+    "featured": false
+=======
     "image": ""
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
   },
   {
     "id": "7",
@@ -60,7 +90,12 @@
     "category": "모니터링",
     "client": "한국가스공사",
     "description": "가스 배관망 및 주요 설비의 실시간 상태 모니터링 및 이상 감지 시스템 구축",
+<<<<<<< HEAD
+    "image": "",
+    "featured": false
+=======
     "image": ""
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
   },
   {
     "id": "8",
@@ -69,7 +104,12 @@
     "category": "모바일",
     "client": "삼성SDS",
     "description": "실내외 통합 위치기반 서비스 플랫폼 고도화 및 신규 모바일 앱 개발",
+<<<<<<< HEAD
+    "image": "",
+    "featured": false
+=======
     "image": ""
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
   },
   {
     "id": "9",
@@ -78,7 +118,12 @@
     "category": "GIS",
     "client": "삼성SDS",
     "description": "삼성SDS 전국 데이터센터 GIS 기반 자산 관리 및 위치 추적 시스템 구축",
+<<<<<<< HEAD
+    "image": "",
+    "featured": false
+=======
     "image": ""
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
   },
   {
     "id": "10",
@@ -87,6 +132,11 @@
     "category": "방재/재난",
     "client": "노불방재",
     "description": "GIS 기반 방재 모니터링 솔루션 초기 버전 개발 및 현장 실증",
+<<<<<<< HEAD
+    "image": "",
+    "featured": false
+=======
     "image": ""
+>>>>>>> cfe0f2f50737d6f8537130e286f19a605672d128
   }
 ]
