@@ -18,3 +18,14 @@ export interface CompanyHistory {
   year: string;
   events: string[];
 }
+
+export interface ContactInfo {
+  placeName: string;
+  address: string;
+  lat: number;
+  lng: number;
+  phone: string;
+  fax: string;
+  email: string;
+  hours: string;
+}
