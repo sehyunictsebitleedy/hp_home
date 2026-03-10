@@ -6,11 +6,32 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white">
-      {/* 배경 그라디언트 장식 */}
+      {/* 움직이는 동그라미 배경 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-blue-50 opacity-60" />
-        <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-blue-100 opacity-40" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-blue-50 to-transparent opacity-30" />
+        {[
+          { w: 520, h: 520, x: "72%", y: "-20%", color: "bg-blue-100", opacity: 0.55, duration: 14, delay: 0 },
+          { w: 340, h: 340, x: "-8%", y: "55%", color: "bg-blue-200", opacity: 0.3, duration: 18, delay: 2 },
+          { w: 220, h: 220, x: "55%", y: "60%", color: "bg-blue-300", opacity: 0.2, duration: 12, delay: 1 },
+          { w: 160, h: 160, x: "30%", y: "-10%", color: "bg-sky-200", opacity: 0.35, duration: 16, delay: 3 },
+          { w: 100, h: 100, x: "85%", y: "40%", color: "bg-indigo-200", opacity: 0.25, duration: 10, delay: 0.5 },
+        ].map((c, i) => (
+          <motion.div
+            key={i}
+            className={`absolute rounded-full ${c.color}`}
+            style={{ width: c.w, height: c.h, left: c.x, top: c.y, opacity: c.opacity }}
+            animate={{
+              x: [0, 30, -20, 15, 0],
+              y: [0, -25, 20, -10, 0],
+              scale: [1, 1.06, 0.96, 1.03, 1],
+            }}
+            transition={{
+              duration: c.duration,
+              delay: c.delay,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -75,19 +96,22 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* 하단 스크롤 힌트 */}
+        {/* 하단 스크롤 힌트 — 마우스 아이콘 */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-400"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <span className="text-xs">스크롤</span>
-          <motion.div
-            className="w-0.5 h-8 bg-gradient-to-b from-gray-300 to-transparent"
-            animate={{ scaleY: [1, 0.5, 1] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-          />
+          {/* 마우스 외곽 */}
+          <div className="relative w-6 h-10 rounded-full border-2 border-gray-400 flex justify-center pt-1.5">
+            {/* 스크롤 휠 */}
+            <motion.div
+              className="w-1 h-2 rounded-full bg-gray-400"
+              animate={{ y: [0, 10, 0], opacity: [1, 0, 1] }}
+              transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
+            />
+          </div>
         </motion.div>
       </div>
     </section>
